@@ -7,14 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		073280032147557100598A3A /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 073280022147557100598A3A /* HomeViewController.m */; };
+		07328006214755D500598A3A /* JXSegmentTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07328005214755D500598A3A /* JXSegmentTitleView.m */; };
+		0732800C21475B6000598A3A /* UIColor+JXExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = 0732800821475B6000598A3A /* UIColor+JXExtend.m */; };
+		0732800D21475B6000598A3A /* JXUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 0732800921475B6000598A3A /* JXUtilities.m */; };
 		07E6F06E21464F3F005B93EA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E6F06D21464F3F005B93EA /* AppDelegate.m */; };
-		07E6F07121464F3F005B93EA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E6F07021464F3F005B93EA /* ViewController.m */; };
-		07E6F07421464F3F005B93EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07E6F07221464F3F005B93EA /* Main.storyboard */; };
 		07E6F07621464F41005B93EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07E6F07521464F41005B93EA /* Assets.xcassets */; };
-		07E6F07921464F41005B93EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07E6F07721464F41005B93EA /* LaunchScreen.storyboard */; };
 		07E6F07C21464F41005B93EA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E6F07B21464F41005B93EA /* main.m */; };
 		07E6F08621464F41005B93EA /* JXScrollPageViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E6F08521464F41005B93EA /* JXScrollPageViewTests.m */; };
 		07E6F09121464F41005B93EA /* JXScrollPageViewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E6F09021464F41005B93EA /* JXScrollPageViewUITests.m */; };
+		2FD5D2A5FE0AC12EE208E8EE /* libPods-JXScrollPageView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A968436B1760BCCBE2F6E64 /* libPods-JXScrollPageView.a */; };
+		6AE2E0DA539B1DE1CC3A3A58 /* libPods-JXScrollPageViewUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A9F55804DB18BBCEC65CAE6 /* libPods-JXScrollPageViewUITests.a */; };
+		E3E945B10076A231A886F24E /* libPods-JXScrollPageViewTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C5517585BC5190F6B46A88E /* libPods-JXScrollPageViewTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,14 +39,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		073280012147557100598A3A /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		073280022147557100598A3A /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		07328004214755D500598A3A /* JXSegmentTitleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXSegmentTitleView.h; sourceTree = "<group>"; };
+		07328005214755D500598A3A /* JXSegmentTitleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXSegmentTitleView.m; sourceTree = "<group>"; };
+		0732800821475B6000598A3A /* UIColor+JXExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+JXExtend.m"; sourceTree = "<group>"; };
+		0732800921475B6000598A3A /* JXUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXUtilities.m; sourceTree = "<group>"; };
+		0732800A21475B6000598A3A /* UIColor+JXExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+JXExtend.h"; sourceTree = "<group>"; };
+		0732800B21475B6000598A3A /* JXUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXUtilities.h; sourceTree = "<group>"; };
 		07E6F06921464F3F005B93EA /* JXScrollPageView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JXScrollPageView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07E6F06C21464F3F005B93EA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		07E6F06D21464F3F005B93EA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		07E6F06F21464F3F005B93EA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		07E6F07021464F3F005B93EA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		07E6F07321464F3F005B93EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		07E6F07521464F41005B93EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		07E6F07821464F41005B93EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		07E6F07A21464F41005B93EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07E6F07B21464F41005B93EA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		07E6F08121464F41005B93EA /* JXScrollPageViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JXScrollPageViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,6 +59,15 @@
 		07E6F08C21464F41005B93EA /* JXScrollPageViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JXScrollPageViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		07E6F09021464F41005B93EA /* JXScrollPageViewUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXScrollPageViewUITests.m; sourceTree = "<group>"; };
 		07E6F09221464F41005B93EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		10570B95E7C9D6E2BFFCF07C /* Pods-JXScrollPageViewTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JXScrollPageViewTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JXScrollPageViewTests/Pods-JXScrollPageViewTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4A968436B1760BCCBE2F6E64 /* libPods-JXScrollPageView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JXScrollPageView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E20971923628CEEB61183E9 /* Pods-JXScrollPageViewTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JXScrollPageViewTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JXScrollPageViewTests/Pods-JXScrollPageViewTests.release.xcconfig"; sourceTree = "<group>"; };
+		8639C8DD5905D5690E772574 /* Pods-JXScrollPageView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JXScrollPageView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JXScrollPageView/Pods-JXScrollPageView.debug.xcconfig"; sourceTree = "<group>"; };
+		9A9F55804DB18BBCEC65CAE6 /* libPods-JXScrollPageViewUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JXScrollPageViewUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C5517585BC5190F6B46A88E /* libPods-JXScrollPageViewTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JXScrollPageViewTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5758240B8DB6DC3EAFCF70E /* Pods-JXScrollPageView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JXScrollPageView.release.xcconfig"; path = "Pods/Target Support Files/Pods-JXScrollPageView/Pods-JXScrollPageView.release.xcconfig"; sourceTree = "<group>"; };
+		E896F8BBD4584879FC3AF417 /* Pods-JXScrollPageViewUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JXScrollPageViewUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JXScrollPageViewUITests/Pods-JXScrollPageViewUITests.release.xcconfig"; sourceTree = "<group>"; };
+		FD290E3BA99BB91B5B4CE343 /* Pods-JXScrollPageViewUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JXScrollPageViewUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JXScrollPageViewUITests/Pods-JXScrollPageViewUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FD5D2A5FE0AC12EE208E8EE /* libPods-JXScrollPageView.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3E945B10076A231A886F24E /* libPods-JXScrollPageViewTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +91,59 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AE2E0DA539B1DE1CC3A3A58 /* libPods-JXScrollPageViewUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07327FFD214754BA00598A3A /* JXScrollPageView */ = {
+			isa = PBXGroup;
+			children = (
+				0732800721475B6000598A3A /* JXTool */,
+				07327FFE214754D500598A3A /* JXSegmentTitleView */,
+				07327FFF214754F400598A3A /* JXPageContentView */,
+			);
+			path = JXScrollPageView;
+			sourceTree = "<group>";
+		};
+		07327FFE214754D500598A3A /* JXSegmentTitleView */ = {
+			isa = PBXGroup;
+			children = (
+				07328004214755D500598A3A /* JXSegmentTitleView.h */,
+				07328005214755D500598A3A /* JXSegmentTitleView.m */,
+			);
+			path = JXSegmentTitleView;
+			sourceTree = "<group>";
+		};
+		07327FFF214754F400598A3A /* JXPageContentView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = JXPageContentView;
+			sourceTree = "<group>";
+		};
+		073280002147551600598A3A /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				073280012147557100598A3A /* HomeViewController.h */,
+				073280022147557100598A3A /* HomeViewController.m */,
+			);
+			path = Example;
+			sourceTree = "<group>";
+		};
+		0732800721475B6000598A3A /* JXTool */ = {
+			isa = PBXGroup;
+			children = (
+				0732800A21475B6000598A3A /* UIColor+JXExtend.h */,
+				0732800821475B6000598A3A /* UIColor+JXExtend.m */,
+				0732800B21475B6000598A3A /* JXUtilities.h */,
+				0732800921475B6000598A3A /* JXUtilities.m */,
+			);
+			path = JXTool;
+			sourceTree = "<group>";
+		};
 		07E6F06021464F3F005B93EA = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +151,8 @@
 				07E6F08421464F41005B93EA /* JXScrollPageViewTests */,
 				07E6F08F21464F41005B93EA /* JXScrollPageViewUITests */,
 				07E6F06A21464F3F005B93EA /* Products */,
+				1913323D9A34123A7BDF782D /* Pods */,
+				B2E089166A9D69500EEF0277 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,13 +169,11 @@
 		07E6F06B21464F3F005B93EA /* JXScrollPageView */ = {
 			isa = PBXGroup;
 			children = (
+				07327FFD214754BA00598A3A /* JXScrollPageView */,
+				073280002147551600598A3A /* Example */,
 				07E6F06C21464F3F005B93EA /* AppDelegate.h */,
 				07E6F06D21464F3F005B93EA /* AppDelegate.m */,
-				07E6F06F21464F3F005B93EA /* ViewController.h */,
-				07E6F07021464F3F005B93EA /* ViewController.m */,
-				07E6F07221464F3F005B93EA /* Main.storyboard */,
 				07E6F07521464F41005B93EA /* Assets.xcassets */,
-				07E6F07721464F41005B93EA /* LaunchScreen.storyboard */,
 				07E6F07A21464F41005B93EA /* Info.plist */,
 				07E6F07B21464F41005B93EA /* main.m */,
 			);
@@ -132,6 +198,29 @@
 			path = JXScrollPageViewUITests;
 			sourceTree = "<group>";
 		};
+		1913323D9A34123A7BDF782D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8639C8DD5905D5690E772574 /* Pods-JXScrollPageView.debug.xcconfig */,
+				A5758240B8DB6DC3EAFCF70E /* Pods-JXScrollPageView.release.xcconfig */,
+				10570B95E7C9D6E2BFFCF07C /* Pods-JXScrollPageViewTests.debug.xcconfig */,
+				6E20971923628CEEB61183E9 /* Pods-JXScrollPageViewTests.release.xcconfig */,
+				FD290E3BA99BB91B5B4CE343 /* Pods-JXScrollPageViewUITests.debug.xcconfig */,
+				E896F8BBD4584879FC3AF417 /* Pods-JXScrollPageViewUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B2E089166A9D69500EEF0277 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4A968436B1760BCCBE2F6E64 /* libPods-JXScrollPageView.a */,
+				9C5517585BC5190F6B46A88E /* libPods-JXScrollPageViewTests.a */,
+				9A9F55804DB18BBCEC65CAE6 /* libPods-JXScrollPageViewUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -139,6 +228,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 07E6F09521464F41005B93EA /* Build configuration list for PBXNativeTarget "JXScrollPageView" */;
 			buildPhases = (
+				7D756D4C5241E85A0ED0F96B /* [CP] Check Pods Manifest.lock */,
 				07E6F06521464F3F005B93EA /* Sources */,
 				07E6F06621464F3F005B93EA /* Frameworks */,
 				07E6F06721464F3F005B93EA /* Resources */,
@@ -156,6 +246,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 07E6F09821464F41005B93EA /* Build configuration list for PBXNativeTarget "JXScrollPageViewTests" */;
 			buildPhases = (
+				2950EC70BF621992FA8C9354 /* [CP] Check Pods Manifest.lock */,
 				07E6F07D21464F41005B93EA /* Sources */,
 				07E6F07E21464F41005B93EA /* Frameworks */,
 				07E6F07F21464F41005B93EA /* Resources */,
@@ -174,6 +265,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 07E6F09B21464F41005B93EA /* Build configuration list for PBXNativeTarget "JXScrollPageViewUITests" */;
 			buildPhases = (
+				DC0B0AA382E639B4896E8175 /* [CP] Check Pods Manifest.lock */,
 				07E6F08821464F41005B93EA /* Sources */,
 				07E6F08921464F41005B93EA /* Frameworks */,
 				07E6F08A21464F41005B93EA /* Resources */,
@@ -235,9 +327,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07E6F07921464F41005B93EA /* LaunchScreen.storyboard in Resources */,
 				07E6F07621464F41005B93EA /* Assets.xcassets in Resources */,
-				07E6F07421464F3F005B93EA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,14 +347,74 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2950EC70BF621992FA8C9354 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JXScrollPageViewTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7D756D4C5241E85A0ED0F96B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JXScrollPageView-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DC0B0AA382E639B4896E8175 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JXScrollPageViewUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		07E6F06521464F3F005B93EA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07E6F07121464F3F005B93EA /* ViewController.m in Sources */,
+				0732800D21475B6000598A3A /* JXUtilities.m in Sources */,
 				07E6F07C21464F41005B93EA /* main.m in Sources */,
+				07328006214755D500598A3A /* JXSegmentTitleView.m in Sources */,
+				0732800C21475B6000598A3A /* UIColor+JXExtend.m in Sources */,
 				07E6F06E21464F3F005B93EA /* AppDelegate.m in Sources */,
+				073280032147557100598A3A /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,25 +448,6 @@
 			targetProxy = 07E6F08D21464F41005B93EA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		07E6F07221464F3F005B93EA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				07E6F07321464F3F005B93EA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		07E6F07721464F41005B93EA /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				07E6F07821464F41005B93EA /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		07E6F09321464F41005B93EA /* Debug */ = {
@@ -431,6 +562,7 @@
 		};
 		07E6F09621464F41005B93EA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8639C8DD5905D5690E772574 /* Pods-JXScrollPageView.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -447,6 +579,7 @@
 		};
 		07E6F09721464F41005B93EA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A5758240B8DB6DC3EAFCF70E /* Pods-JXScrollPageView.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -463,6 +596,7 @@
 		};
 		07E6F09921464F41005B93EA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 10570B95E7C9D6E2BFFCF07C /* Pods-JXScrollPageViewTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -481,6 +615,7 @@
 		};
 		07E6F09A21464F41005B93EA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E20971923628CEEB61183E9 /* Pods-JXScrollPageViewTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -499,6 +634,7 @@
 		};
 		07E6F09C21464F41005B93EA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD290E3BA99BB91B5B4CE343 /* Pods-JXScrollPageViewUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = JXScrollPageViewUITests/Info.plist;
@@ -516,6 +652,7 @@
 		};
 		07E6F09D21464F41005B93EA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E896F8BBD4584879FC3AF417 /* Pods-JXScrollPageViewUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = JXScrollPageViewUITests/Info.plist;
