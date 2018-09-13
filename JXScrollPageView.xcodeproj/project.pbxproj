@@ -11,6 +11,7 @@
 		07328006214755D500598A3A /* JXSegmentTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07328005214755D500598A3A /* JXSegmentTitleView.m */; };
 		0732800C21475B6000598A3A /* UIColor+JXExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = 0732800821475B6000598A3A /* UIColor+JXExtend.m */; };
 		0732800D21475B6000598A3A /* JXUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 0732800921475B6000598A3A /* JXUtilities.m */; };
+		073280622149F9B200598A3A /* JXPageContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 073280612149F9B200598A3A /* JXPageContentView.m */; };
 		07E6F06E21464F3F005B93EA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E6F06D21464F3F005B93EA /* AppDelegate.m */; };
 		07E6F07621464F41005B93EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07E6F07521464F41005B93EA /* Assets.xcassets */; };
 		07E6F07C21464F41005B93EA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E6F07B21464F41005B93EA /* main.m */; };
@@ -47,6 +48,8 @@
 		0732800921475B6000598A3A /* JXUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXUtilities.m; sourceTree = "<group>"; };
 		0732800A21475B6000598A3A /* UIColor+JXExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+JXExtend.h"; sourceTree = "<group>"; };
 		0732800B21475B6000598A3A /* JXUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXUtilities.h; sourceTree = "<group>"; };
+		073280602149F9B200598A3A /* JXPageContentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXPageContentView.h; sourceTree = "<group>"; };
+		073280612149F9B200598A3A /* JXPageContentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXPageContentView.m; sourceTree = "<group>"; };
 		07E6F06921464F3F005B93EA /* JXScrollPageView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JXScrollPageView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07E6F06C21464F3F005B93EA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		07E6F06D21464F3F005B93EA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -120,6 +123,8 @@
 		07327FFF214754F400598A3A /* JXPageContentView */ = {
 			isa = PBXGroup;
 			children = (
+				073280602149F9B200598A3A /* JXPageContentView.h */,
+				073280612149F9B200598A3A /* JXPageContentView.m */,
 			);
 			path = JXPageContentView;
 			sourceTree = "<group>";
@@ -411,6 +416,7 @@
 			files = (
 				0732800D21475B6000598A3A /* JXUtilities.m in Sources */,
 				07E6F07C21464F41005B93EA /* main.m in Sources */,
+				073280622149F9B200598A3A /* JXPageContentView.m in Sources */,
 				07328006214755D500598A3A /* JXSegmentTitleView.m in Sources */,
 				0732800C21475B6000598A3A /* UIColor+JXExtend.m in Sources */,
 				07E6F06E21464F3F005B93EA /* AppDelegate.m in Sources */,
