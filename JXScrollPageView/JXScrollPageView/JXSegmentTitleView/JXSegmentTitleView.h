@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 @class JXSegmentTitleView;
 
+typedef void(^MoveIndicatorWithProgress)(NSInteger startIndex, NSInteger endIndex, CGFloat progress);
+
 @protocol JXSegmentTitleViewDelegate <NSObject>
 @optional
 /**
@@ -102,6 +104,7 @@
  容器边框宽度，默认为0
  */
 @property (nonatomic, assign) CGFloat segmentBorderWidth;
+@property (nonatomic, strong) MoveIndicatorWithProgress moveIndicatorWithProgress;
 
 - (instancetype)initWithFrame:(CGRect)frame titles:(NSArray *)titlesArray delegate:(id<JXSegmentTitleViewDelegate>)delegate;
 

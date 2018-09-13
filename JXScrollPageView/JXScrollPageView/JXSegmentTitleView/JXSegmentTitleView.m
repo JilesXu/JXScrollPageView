@@ -60,6 +60,43 @@ typedef NS_OPTIONS(NSUInteger, ItemWidthType) {
         
         self.delegate = delegate;
         
+        __weak typeof(self) weakSelf = self;
+        
+        //下方视图与滑块联动
+        self.moveIndicatorWithProgress = ^(NSInteger startIndex, NSInteger endIndex, CGFloat progress) {
+            if ([JXUtilities isValidArray:weakSelf.itemBtnArray] &&
+                startIndex < weakSelf.itemBtnArray.count &&
+                endIndex < weakSelf.itemBtnArray.count) {
+                
+                UIButton *startBtn = weakSelf.itemBtnArray[startIndex];
+                UIButton *endBtn = weakSelf.itemBtnArray[endIndex];
+                
+                if (startBtn != nil && endBtn != nil) {
+                    
+                    //滑块的起止宽度
+                    CGFloat startWidth = weakSelf.itemWidth == 0 ? [JXSegmentTitleView getWidthWithString:startBtn.titleLabel.text font:weakSelf.titleSelectFont] : weakSelf.itemWidth;
+                    CGFloat endWidth = weakSelf.itemWidth == 0 ? [JXSegmentTitleView getWidthWithString:endBtn.titleLabel.text font:weakSelf.titleSelectFont] : weakSelf.itemWidth;
+                    
+                    CGFloat currentWidth = (endWidth - startWidth) * progress + startWidth;
+                    
+                    //滑块的起止x值
+                    CGFloat startX = CGRectGetMinX(startBtn.frame) +
+                    (CGRectGetWidth(startBtn.frame) - startWidth)/2;
+                    CGFloat endX = CGRectGetMinX(endBtn.frame) +
+                    (CGRectGetWidth(endBtn.frame) - endWidth)/2;
+                    
+                    CGFloat currentX = (endX - startX) * progress + startX;
+                    
+                    [UIView animateWithDuration:(0.5) animations:^{
+                        weakSelf.indicatorView.frame = CGRectMake(currentX, CGRectGetMinY(weakSelf.indicatorView.frame), currentWidth, 2);
+                    } completion:^(BOOL finished) {
+                        [weakSelf scrollSelectBtnCenter:YES];
+                    }];
+                }
+            }
+            
+        };
+        
         [self addSubviews];
         [self setupFrame];
     }
@@ -220,7 +257,7 @@ typedef NS_OPTIONS(NSUInteger, ItemWidthType) {
     
     [UIView animateWithDuration:(animated?0.5:0) animations:^{
         self.indicatorView.center = CGPointMake(selectBtn.center.x, CGRectGetHeight(self.scrollView.bounds) - 1);
-        self.indicatorView.bounds = CGRectMake(0, 0, indicatorWidth, 2);
+        self.indicatorView.bounds = CGRectMake(0, 0, indicatorWidth, 5);
     } completion:^(BOOL finished) {
         [self scrollSelectBtnCenter:animated];
     }];
@@ -314,6 +351,7 @@ typedef NS_OPTIONS(NSUInteger, ItemWidthType) {
     [UIView animateWithDuration:0.5 animations:^{
         [currentBtn setBackgroundColor:self.itemSelectBGColor];
     }];
+    
     
     [self moveIndicatorView:YES];
 }

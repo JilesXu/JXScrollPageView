@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JXSegmentTitleView.h"
 
 @class JXPageContentView;
 
@@ -46,7 +47,7 @@
 @interface JXPageContentView : UIView
 
 
-- (instancetype)initWithFrame:(CGRect)frame childVCs:(NSArray *)childVCs parentVC:(UIViewController *)parentVC delegate:(id<JXPageContentViewDelegate>)delegate;
+- (instancetype)initWithFrame:(CGRect)frame childVCs:(NSArray *)childVCs parentVC:(UIViewController *)parentVC delegate:(id<JXPageContentViewDelegate>)delegate andSegement:(JXSegmentTitleView *)segmentTitleView;
 
 @property (nonatomic, weak) id<JXPageContentViewDelegate> delegate;
 

@@ -7,8 +7,6 @@
 //
 
 #import "MainViewController.h"
-#import "JXSegmentTitleView.h"
-#import "JXPageContentView.h"
 #import "Masonry.h"
 
 #import "FirstViewController.h"
@@ -20,14 +18,7 @@
 #define kSegmentHeight 50
 
 @interface MainViewController ()<JXSegmentTitleViewDelegate, JXPageContentViewDelegate>
-/*****必要属性******/
-@property (nonatomic, strong) JXSegmentTitleView *segmentTitleView;
-@property (nonatomic, strong) JXPageContentView *pageContentView;
-/**
- 子Controller数组
- */
-@property (nonatomic, strong) NSArray *childVCsArray;
-/*****************/
+
 @property (nonatomic, strong) FirstViewController *firstVC;
 @property (nonatomic, strong) SecondViewController *secondVC;
 @property (nonatomic, strong) ThirdViewController *thirdVC;
@@ -109,7 +100,8 @@
         _segmentTitleView.titleSelectColor = [UIColor blueColor];
         _segmentTitleView.itemNormalBGColor = [UIColor greenColor];
         _segmentTitleView.itemSelectBGColor = [UIColor orangeColor];
-        _segmentTitleView.isShowIndicator = NO;
+        _segmentTitleView.isShowIndicator = YES;
+        _segmentTitleView.indicatorColor = [UIColor blackColor];
         _segmentTitleView.segmentCornerRadius = segmentFrame.size.height/2;
         _segmentTitleView.segmentBorderColor = [UIColor whiteColor];
         _segmentTitleView.segmentBorderWidth = 1;
@@ -123,7 +115,15 @@
 
 - (JXPageContentView *)pageContentView {
     if (!_pageContentView) {
-        _pageContentView = [[JXPageContentView alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(self.segmentTitleView.bounds), CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds)-CGRectGetHeight(self.segmentTitleView.bounds)) childVCs:self.childVCsArray parentVC:self delegate:self];
+        _pageContentView = [[JXPageContentView alloc] initWithFrame:
+                            CGRectMake(0,
+                                       CGRectGetHeight(self.segmentTitleView.bounds),
+                                       CGRectGetWidth(self.view.bounds),
+                                       CGRectGetHeight(self.view.bounds)-CGRectGetHeight(self.segmentTitleView.bounds))
+                                                           childVCs:self.childVCsArray
+                                                           parentVC:self
+                                                           delegate:self
+                                                        andSegement:self.segmentTitleView];
         _pageContentView.contentViewCurrentIndex = 2;
     }
 

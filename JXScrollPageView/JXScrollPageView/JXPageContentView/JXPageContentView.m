@@ -14,10 +14,11 @@
 
 @interface JXPageContentView() <UICollectionViewDelegate, UICollectionViewDataSource>
 
-@property (nonatomic, weak) UIViewController *parentVC;//父视图
+@property (nonatomic, strong) UIViewController *parentVC;//父视图
 @property (nonatomic, strong) NSArray *childsVCs;//子视图数组
 @property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, strong) UICollectionViewFlowLayout *flowLayout;
+@property (nonatomic, strong) JXSegmentTitleView *segmentTitleView;
 
 @property (nonatomic, assign) CGFloat startOffsetX;
 @property (nonatomic, assign) BOOL isSelectBtn;//是否是滑动
@@ -27,12 +28,13 @@
 @implementation JXPageContentView
 
 #pragma mark - Life Cycle
-- (instancetype)initWithFrame:(CGRect)frame childVCs:(NSArray *)childVCs parentVC:(UIViewController *)parentVC delegate:(id<JXPageContentViewDelegate>)delegate {
+- (instancetype)initWithFrame:(CGRect)frame childVCs:(NSArray *)childVCs parentVC:(UIViewController *)parentVC delegate:(id<JXPageContentViewDelegate>)delegate andSegement:(JXSegmentTitleView *)segmentTitleView {
     self = [super initWithFrame:frame];
     if (self) {
         self.parentVC = parentVC;
         self.childsVCs = childVCs;
         self.delegate = delegate;
+        self.segmentTitleView = segmentTitleView;
         
         [self addSubViews];
         [self setupFrame];
@@ -128,6 +130,11 @@
             endIndex = startIndex - 1;
             endIndex = endIndex < 0 ? 0 : endIndex;
         }
+        
+        if (self.segmentTitleView.moveIndicatorWithProgress) {
+            self.segmentTitleView.moveIndicatorWithProgress(startIndex, endIndex, progress);
+        }
+        
         
         if (self.delegate && [self.delegate respondsToSelector:@selector(JXPageContentViewDidScroll:startIndex:endIndex:progress:)]) {
             [self.delegate JXPageContentViewDidScroll:self startIndex:startIndex endIndex:endIndex progress:progress];
