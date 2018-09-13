@@ -8,6 +8,7 @@
 
 #import "JXPageContentView.h"
 #import "Masonry.h"
+#import "JXUtilities.h"
 
 #define kCollectionViewCell @"kCollectionViewCell"
 
@@ -41,7 +42,11 @@
 
 #pragma mark UICollectionView Delegate
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.childsVCs.count;
+    if ([JXUtilities isValidArray:self.childsVCs]) {
+        return self.childsVCs.count;
+    }
+    
+    return 0;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -54,9 +59,11 @@
     //让数组中的每个元素 都调用removeFromSuperview
     [cell.contentView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     
-    UIViewController *childVc = self.childsVCs[indexPath.row];
-    childVc.view.frame = cell.contentView.bounds;
-    [cell.contentView addSubview:childVc.view];
+    if ([JXUtilities isValidArray:self.childsVCs] && indexPath.row < self.childsVCs.count) {
+        UIViewController *childVc = self.childsVCs[indexPath.row];
+        childVc.view.frame = cell.contentView.bounds;
+        [cell.contentView addSubview:childVc.view];
+    }
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didEndDisplayingCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -65,20 +72,23 @@
 }
 
 - (void)willDisappearWithIndex:(NSInteger)index {
-    UIViewController<JXPageContentViewDelegate> *controller = self.childsVCs[index];
-    if (controller) {
-        if ([controller respondsToSelector:@selector(viewWillDisappearForIndex:)]) {
-            [controller viewWillDisappearForIndex:index];
+    if ([JXUtilities isValidArray:self.childsVCs] && index < self.childsVCs.count) {
+        UIViewController<JXPageContentViewDelegate> *controller = self.childsVCs[index];
+        if (controller) {
+            if ([controller respondsToSelector:@selector(viewWillDisappearForIndex:)]) {
+                [controller viewWillDisappearForIndex:index];
+            }
         }
     }
-    
 }
 
 - (void)didDisappearWithIndex:(NSInteger)index {
-    UIViewController<JXPageContentViewDelegate> *controller = self.childsVCs[index];
-    if (controller) {
-        if ([controller respondsToSelector:@selector(viewDidDisappearForIndex:)]) {
-            [controller viewDidDisappearForIndex:index];
+    if ([JXUtilities isValidArray:self.childsVCs] && index < self.childsVCs.count) {
+        UIViewController<JXPageContentViewDelegate> *controller = self.childsVCs[index];
+        if (controller) {
+            if ([controller respondsToSelector:@selector(viewDidDisappearForIndex:)]) {
+                [controller viewDidDisappearForIndex:index];
+            }
         }
     }
 }
@@ -97,28 +107,31 @@
     if (self.isSelectBtn) {
         return;
     }
-    CGFloat scrollView_W = scrollView.bounds.size.width;
-    CGFloat currentOffsetX = scrollView.contentOffset.x;
-    NSInteger startIndex = floor(self.startOffsetX/scrollView_W);//floor向下取整  4.9 = 4
-    NSInteger endIndex;
-    CGFloat progress;
-    if (currentOffsetX > self.startOffsetX) {//左滑left
-        progress = (currentOffsetX - self.startOffsetX)/scrollView_W;
-        endIndex = startIndex + 1;
-        if (endIndex > self.childsVCs.count - 1) {
-            endIndex = self.childsVCs.count - 1;
-        }
-    } else if (currentOffsetX == self.startOffsetX){//没滑过去
-        progress = 0;
-        endIndex = startIndex;
-    } else {//右滑right
-        progress = (_startOffsetX - currentOffsetX)/scrollView_W;
-        endIndex = startIndex - 1;
-        endIndex = endIndex < 0 ? 0 : endIndex;
-    }
     
-    if (self.delegate && [self.delegate respondsToSelector:@selector(JXPageContentViewDidScroll:startIndex:endIndex:progress:)]) {
-        [self.delegate JXPageContentViewDidScroll:self startIndex:startIndex endIndex:endIndex progress:progress];
+    if ([JXUtilities isValidArray:self.childsVCs]) {
+        CGFloat scrollView_W = scrollView.bounds.size.width;
+        CGFloat currentOffsetX = scrollView.contentOffset.x;
+        NSInteger startIndex = floor(self.startOffsetX/scrollView_W);//floor向下取整  4.9 = 4
+        NSInteger endIndex;
+        CGFloat progress;
+        if (currentOffsetX > self.startOffsetX) {//左滑left
+            progress = (currentOffsetX - self.startOffsetX)/scrollView_W;
+            endIndex = startIndex + 1;
+            if (endIndex > self.childsVCs.count - 1) {
+                endIndex = self.childsVCs.count - 1;
+            }
+        } else if (currentOffsetX == self.startOffsetX){//没滑过去
+            progress = 0;
+            endIndex = startIndex;
+        } else {//右滑right
+            progress = (_startOffsetX - currentOffsetX)/scrollView_W;
+            endIndex = startIndex - 1;
+            endIndex = endIndex < 0 ? 0 : endIndex;
+        }
+        
+        if (self.delegate && [self.delegate respondsToSelector:@selector(JXPageContentViewDidScroll:startIndex:endIndex:progress:)]) {
+            [self.delegate JXPageContentViewDidScroll:self startIndex:startIndex endIndex:endIndex progress:progress];
+        }
     }
 }
 
@@ -149,8 +162,10 @@
     self.isSelectBtn = NO;
     self.contentViewCanScroll = YES;
     
-    for (UIViewController *childVC in self.childsVCs) {
-        [self.parentVC addChildViewController:childVC];
+    if ([JXUtilities isValidArray:self.childsVCs]) {
+        for (UIViewController *childVC in self.childsVCs) {
+            [self.parentVC addChildViewController:childVC];
+        }
     }
     
     [self addSubview:self.collectionView];
@@ -192,7 +207,7 @@
 }
 
 - (void)setContentViewCurrentIndex:(NSInteger)contentViewCurrentIndex {
-    if (contentViewCurrentIndex < 0 || contentViewCurrentIndex > self.childsVCs.count-1) {
+    if (contentViewCurrentIndex < 0 || contentViewCurrentIndex > self.childsVCs.count-1 || ![JXUtilities isValidArray:self.childsVCs]) {
         return;
     }
     self.isSelectBtn = YES;

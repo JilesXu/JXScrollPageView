@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		073280032147557100598A3A /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 073280022147557100598A3A /* HomeViewController.m */; };
+		073280032147557100598A3A /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 073280022147557100598A3A /* MainViewController.m */; };
 		07328006214755D500598A3A /* JXSegmentTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07328005214755D500598A3A /* JXSegmentTitleView.m */; };
 		0732800C21475B6000598A3A /* UIColor+JXExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = 0732800821475B6000598A3A /* UIColor+JXExtend.m */; };
 		0732800D21475B6000598A3A /* JXUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 0732800921475B6000598A3A /* JXUtilities.m */; };
 		073280622149F9B200598A3A /* JXPageContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 073280612149F9B200598A3A /* JXPageContentView.m */; };
+		07328066214A0F8900598A3A /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07328065214A0F8900598A3A /* FirstViewController.m */; };
+		07328069214A0F9800598A3A /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07328068214A0F9800598A3A /* SecondViewController.m */; };
+		0732806C214A0FA000598A3A /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0732806B214A0FA000598A3A /* ThirdViewController.m */; };
 		07E6F06E21464F3F005B93EA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E6F06D21464F3F005B93EA /* AppDelegate.m */; };
 		07E6F07621464F41005B93EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07E6F07521464F41005B93EA /* Assets.xcassets */; };
 		07E6F07C21464F41005B93EA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E6F07B21464F41005B93EA /* main.m */; };
@@ -40,8 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		073280012147557100598A3A /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
-		073280022147557100598A3A /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		073280012147557100598A3A /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		073280022147557100598A3A /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		07328004214755D500598A3A /* JXSegmentTitleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXSegmentTitleView.h; sourceTree = "<group>"; };
 		07328005214755D500598A3A /* JXSegmentTitleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXSegmentTitleView.m; sourceTree = "<group>"; };
 		0732800821475B6000598A3A /* UIColor+JXExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+JXExtend.m"; sourceTree = "<group>"; };
@@ -50,6 +53,12 @@
 		0732800B21475B6000598A3A /* JXUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXUtilities.h; sourceTree = "<group>"; };
 		073280602149F9B200598A3A /* JXPageContentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXPageContentView.h; sourceTree = "<group>"; };
 		073280612149F9B200598A3A /* JXPageContentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXPageContentView.m; sourceTree = "<group>"; };
+		07328064214A0F8900598A3A /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		07328065214A0F8900598A3A /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		07328067214A0F9800598A3A /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		07328068214A0F9800598A3A /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		0732806A214A0FA000598A3A /* ThirdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
+		0732806B214A0FA000598A3A /* ThirdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
 		07E6F06921464F3F005B93EA /* JXScrollPageView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JXScrollPageView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07E6F06C21464F3F005B93EA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		07E6F06D21464F3F005B93EA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -132,8 +141,9 @@
 		073280002147551600598A3A /* Example */ = {
 			isa = PBXGroup;
 			children = (
-				073280012147557100598A3A /* HomeViewController.h */,
-				073280022147557100598A3A /* HomeViewController.m */,
+				073280012147557100598A3A /* MainViewController.h */,
+				073280022147557100598A3A /* MainViewController.m */,
+				07328063214A0F5A00598A3A /* ChildViewController */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -147,6 +157,19 @@
 				0732800921475B6000598A3A /* JXUtilities.m */,
 			);
 			path = JXTool;
+			sourceTree = "<group>";
+		};
+		07328063214A0F5A00598A3A /* ChildViewController */ = {
+			isa = PBXGroup;
+			children = (
+				07328064214A0F8900598A3A /* FirstViewController.h */,
+				07328065214A0F8900598A3A /* FirstViewController.m */,
+				07328067214A0F9800598A3A /* SecondViewController.h */,
+				07328068214A0F9800598A3A /* SecondViewController.m */,
+				0732806A214A0FA000598A3A /* ThirdViewController.h */,
+				0732806B214A0FA000598A3A /* ThirdViewController.m */,
+			);
+			path = ChildViewController;
 			sourceTree = "<group>";
 		};
 		07E6F06021464F3F005B93EA = {
@@ -414,13 +437,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07328069214A0F9800598A3A /* SecondViewController.m in Sources */,
 				0732800D21475B6000598A3A /* JXUtilities.m in Sources */,
 				07E6F07C21464F41005B93EA /* main.m in Sources */,
 				073280622149F9B200598A3A /* JXPageContentView.m in Sources */,
 				07328006214755D500598A3A /* JXSegmentTitleView.m in Sources */,
 				0732800C21475B6000598A3A /* UIColor+JXExtend.m in Sources */,
+				0732806C214A0FA000598A3A /* ThirdViewController.m in Sources */,
 				07E6F06E21464F3F005B93EA /* AppDelegate.m in Sources */,
-				073280032147557100598A3A /* HomeViewController.m in Sources */,
+				073280032147557100598A3A /* MainViewController.m in Sources */,
+				07328066214A0F8900598A3A /* FirstViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "HomeViewController.h"
+#import "MainViewController.h"
 
 @interface AppDelegate ()
 
@@ -21,7 +21,8 @@
     application.delegate.window.backgroundColor = [UIColor whiteColor];
     [application.delegate.window makeKeyAndVisible];
     
-    HomeViewController *vc = [[HomeViewController alloc] init];
+    MainViewController *vc = [[MainViewController alloc] init];
+    
     application.delegate.window.rootViewController = vc;
     
     return YES;

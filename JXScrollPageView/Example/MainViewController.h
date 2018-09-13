@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HomeViewController : UIViewController
+@interface MainViewController : UIViewController
+
+@property (nonatomic, assign) NSInteger currentIndex;
 
 @end
