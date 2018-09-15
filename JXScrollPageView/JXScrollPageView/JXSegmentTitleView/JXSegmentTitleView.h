@@ -60,6 +60,15 @@ typedef void(^MoveIndicatorWithProgress)(NSInteger startIndex, NSInteger endInde
  */
 @property (nonatomic, strong) UIColor *titleSelectColor;
 /**
+ 标题正常RGB颜色
+ */
+@property (nonatomic, strong) NSDictionary *titleNormalRGBColorDic;
+/**
+ 标题选中RGB颜色
+ */
+@property (nonatomic, strong) NSDictionary *titleSelectRGBColorDic;
+
+/**
  是否显示导航条，默认YES
  */
 @property (nonatomic, assign) BOOL isShowIndicator;
@@ -75,6 +84,14 @@ typedef void(^MoveIndicatorWithProgress)(NSInteger startIndex, NSInteger endInde
  标题选中背景颜色，默认无色
  */
 @property (nonatomic, strong) UIColor *itemSelectBGColor;
+/**
+ 标题正常背景RGB颜色
+ */
+@property (nonatomic, strong) NSDictionary *itemNormalBGRGBColorDic;
+/**
+ 标题选中背景RGB颜色
+ */
+@property (nonatomic, strong) NSDictionary *itemSelectBGRGBColorDic;
 /**
  标题圆角，默认为0
  */
@@ -104,6 +121,7 @@ typedef void(^MoveIndicatorWithProgress)(NSInteger startIndex, NSInteger endInde
  容器边框宽度，默认为0
  */
 @property (nonatomic, assign) CGFloat segmentBorderWidth;
+
 @property (nonatomic, strong) MoveIndicatorWithProgress moveIndicatorWithProgress;
 
 - (instancetype)initWithFrame:(CGRect)frame titles:(NSArray *)titlesArray delegate:(id<JXSegmentTitleViewDelegate>)delegate;

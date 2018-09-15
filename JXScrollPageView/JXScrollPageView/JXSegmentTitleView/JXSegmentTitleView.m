@@ -13,6 +13,8 @@
 #define kSCALE [UIScreen mainScreen].bounds.size.width/375
 #define kTO_SCALE(x) kSCALE*x
 
+#define RGBACOLOR(r,g,b,a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)]
+
 /**
  segment各item宽度类型
 
@@ -92,6 +94,14 @@ typedef NS_OPTIONS(NSUInteger, ItemWidthType) {
                     } completion:^(BOOL finished) {
                         [weakSelf scrollSelectBtnCenter:YES];
                     }];
+                    
+                    //selectedBtn->normalBtn Color
+                    [startBtn setTitleColor:[weakSelf changeGraduallyFrom:weakSelf.titleSelectRGBColorDic to:weakSelf.titleNormalRGBColorDic withProgress:progress] forState:UIControlStateNormal];
+                    [startBtn setBackgroundColor:[weakSelf changeGraduallyFrom:weakSelf.itemSelectBGRGBColorDic to:weakSelf.itemNormalBGRGBColorDic withProgress:progress]];
+                    
+                    //normalBtn Color->selectedBtn
+                    [startBtn setTitleColor:[weakSelf changeGraduallyFrom:weakSelf.titleNormalRGBColorDic to:weakSelf.titleSelectRGBColorDic withProgress:progress] forState:UIControlStateNormal];
+                    [startBtn setBackgroundColor:[weakSelf changeGraduallyFrom:weakSelf.itemNormalBGRGBColorDic to:weakSelf.itemSelectBGRGBColorDic withProgress:progress]];
                 }
             }
             
@@ -102,6 +112,29 @@ typedef NS_OPTIONS(NSUInteger, ItemWidthType) {
     }
     
     return self;
+}
+
+/**
+ 标题颜色 渐变
+
+ @param progress 进度
+ @return 当前颜色
+ */
+- (UIColor *)changeGraduallyFrom:(NSDictionary *)fromColorDic to:(NSDictionary *)toColorDic withProgress:(CGFloat)progress {
+    if ([JXUtilities isValidDictionary:fromColorDic] &&
+        [JXUtilities isValidDictionary:toColorDic]) {
+        
+        CGFloat selToNorR = ([toColorDic[@"r"] doubleValue] - [fromColorDic[@"r"] doubleValue]) * progress + [fromColorDic[@"r"] doubleValue];
+        CGFloat selToNorG = ([toColorDic[@"g"] doubleValue] - [fromColorDic[@"g"] doubleValue]) * progress + [fromColorDic[@"g"] doubleValue];
+        CGFloat selToNorB = ([toColorDic[@"b"] doubleValue] - [fromColorDic[@"b"] doubleValue]) * progress + [fromColorDic[@"b"] doubleValue];
+        CGFloat selToNorA = ([toColorDic[@"a"] doubleValue] - [fromColorDic[@"a"] doubleValue]) * progress + [fromColorDic[@"a"] doubleValue];
+        
+        UIColor *currentColor = RGBACOLOR(selToNorR, selToNorG, selToNorB, selToNorA);
+        
+        return currentColor;
+    }
+    
+    return [UIColor redColor];
 }
 
 #pragma mark - UIScrollView Delegate
@@ -281,6 +314,31 @@ typedef NS_OPTIONS(NSUInteger, ItemWidthType) {
     return [string boundingRectWithSize:CGSizeMake(0, 0) options:NSStringDrawingUsesLineFragmentOrigin attributes:attrs context:nil].size.width;
 }
 
+/**
+ 获取颜色的RGBA值
+
+ @param originColor 颜色
+ @return rgba字典
+ */
+- (NSDictionary *)getRGBADictionaryByColor:(UIColor *)originColor {
+    CGFloat r = 0, g = 0, b = 0, a = 0;
+    
+    if ([self respondsToSelector:@selector(getRed:green:blue:alpha:)]) {
+        [originColor getRed:&r green:&g blue:&b alpha:&a];
+    } else {
+        const CGFloat *components = CGColorGetComponents(originColor.CGColor);
+        r = components[0];
+        g = components[1];
+        b = components[2];
+        a = components[3];
+    }
+    
+    return @{@"R":@(r),
+             @"G":@(g),
+             @"B":@(b),
+             @"A":@(a)};
+}
+
 #pragma mark - Setting And Getting
 - (UIScrollView *)scrollView {
     if (!_scrollView) {
@@ -401,6 +459,7 @@ typedef NS_OPTIONS(NSUInteger, ItemWidthType) {
  */
 - (void)setTitleNormalColor:(UIColor *)titleNormalColor {
     _titleNormalColor = titleNormalColor;
+    _titleNormalRGBColorDic = [self getRGBADictionaryByColor:titleNormalColor];
     for (UIButton *btn in self.itemBtnArray) {
         [btn setTitleColor:titleNormalColor forState:UIControlStateNormal];
     }
@@ -411,6 +470,7 @@ typedef NS_OPTIONS(NSUInteger, ItemWidthType) {
  */
 - (void)setTitleSelectColor:(UIColor *)titleSelectColor {
     _titleSelectColor = titleSelectColor;
+    _titleSelectRGBColorDic = [self getRGBADictionaryByColor:titleSelectColor];
     for (UIButton *btn in self.itemBtnArray) {
         [btn setTitleColor:titleSelectColor forState:UIControlStateSelected];
     }
@@ -441,6 +501,7 @@ typedef NS_OPTIONS(NSUInteger, ItemWidthType) {
  */
 - (void)setItemNormalBGColor:(UIColor *)itemNormalBGColor {
     _itemNormalBGColor = itemNormalBGColor;
+    _itemNormalBGRGBColorDic = [self getRGBADictionaryByColor:itemNormalBGColor];
     for (UIButton *btn in self.itemBtnArray) {
         [btn setBackgroundColor:itemNormalBGColor];
     }
@@ -451,6 +512,7 @@ typedef NS_OPTIONS(NSUInteger, ItemWidthType) {
  */
 - (void)setItemSelectBGColor:(UIColor *)itemSelectBGColor {
     _itemSelectBGColor = itemSelectBGColor;
+    _itemSelectBGRGBColorDic = [self getRGBADictionaryByColor:itemSelectBGColor];
     for (UIButton *btn in self.itemBtnArray) {
         if (btn.selected) {
             [btn setBackgroundColor:itemSelectBGColor];
