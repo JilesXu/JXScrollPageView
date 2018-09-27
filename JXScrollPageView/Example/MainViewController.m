@@ -92,7 +92,7 @@
                                          statusHeight,
                                          CGRectGetWidth(self.view.bounds),
                                          kSegmentHeight);
-        _segmentTitleView = [[JXSegmentTitleView alloc] initWithFrame:segmentFrame titles:@[@"通信",@"生活",@"营业厅"] delegate:self];
+        _segmentTitleView = [[JXSegmentTitleView alloc] initWithFrame:segmentFrame titles:self.scrollPageModel.segementTitleArray delegate:self];
         _segmentTitleView.titleSelectFont = [UIFont systemFontOfSize:14];
         _segmentTitleView.titleFont = [UIFont systemFontOfSize:14];
         _segmentTitleView.itemMargin = 0;
@@ -120,7 +120,7 @@
                                        CGRectGetHeight(self.segmentTitleView.bounds),
                                        CGRectGetWidth(self.view.bounds),
                                        CGRectGetHeight(self.view.bounds)-CGRectGetHeight(self.segmentTitleView.bounds))
-                                                           childVCs:self.childVCsArray
+                                                           childVCs:self.scrollPageModel.childVCsArray
                                                            parentVC:self
                                                            delegate:self
                                                         andSegement:self.segmentTitleView];
@@ -130,12 +130,20 @@
     return _pageContentView;
 }
 
-- (NSArray *)childVCsArray {
-    if (!_childVCsArray) {
-        _childVCsArray = [NSArray arrayWithObjects:self.firstVC, self.secondVC, self.thirdVC, nil];
+- (JXScrollPageModel *)scrollPageModel {
+    if (!_scrollPageModel) {
+        _scrollPageModel = [[JXScrollPageModel alloc] init];
+        _scrollPageModel.childVCsArray = [NSArray arrayWithObjects:self.firstVC, self.secondVC, self.thirdVC, nil];
+        _scrollPageModel.segementTitleArray = @[@"通信",@"生活",@"营业厅"];
+        
+        JXSegmentExtraModel *model = [[JXSegmentExtraModel alloc] init];
+        model.insertLocation = 2;
+        model.title = @"插入位置";
+        
+        _scrollPageModel.segementExtraArray = @[model];
     }
     
-    return _childVCsArray;
+    return _scrollPageModel;
 }
 
 - (FirstViewController *)firstVC {

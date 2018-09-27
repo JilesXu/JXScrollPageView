@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "JXSegmentTitleView.h"
 #import "JXPageContentView.h"
+#import "JXScrollPageModel.h"
+#import "JXSegmentExtraModel.h"
 
 @interface MainViewController : UIViewController
 
@@ -16,10 +18,7 @@
 
 @property (nonatomic, strong) JXSegmentTitleView *segmentTitleView;
 @property (nonatomic, strong) JXPageContentView *pageContentView;
-/**
- 子Controller数组
- */
-@property (nonatomic, strong) NSArray *childVCsArray;
+@property (nonatomic, strong) JXScrollPageModel *scrollPageModel;
 /*****************/
 
 @property (nonatomic, assign) NSInteger currentIndex;

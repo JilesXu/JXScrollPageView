@@ -121,7 +121,9 @@ typedef void(^MoveIndicatorWithProgress)(NSInteger startIndex, NSInteger endInde
  容器边框宽度，默认为0
  */
 @property (nonatomic, assign) CGFloat segmentBorderWidth;
-
+/**
+ 配合JXPageContentView使滑块按比例滑动
+ */
 @property (nonatomic, strong) MoveIndicatorWithProgress moveIndicatorWithProgress;
 
 - (instancetype)initWithFrame:(CGRect)frame titles:(NSArray *)titlesArray delegate:(id<JXSegmentTitleViewDelegate>)delegate;

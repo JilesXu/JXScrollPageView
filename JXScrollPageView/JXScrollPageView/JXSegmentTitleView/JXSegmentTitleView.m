@@ -114,29 +114,6 @@ typedef NS_OPTIONS(NSUInteger, ItemWidthType) {
     return self;
 }
 
-///**
-// 标题颜色 渐变
-//
-// @param progress 进度
-// @return 当前颜色
-// */
-//- (UIColor *)changeGraduallyFrom:(NSDictionary *)fromColorDic to:(NSDictionary *)toColorDic withProgress:(CGFloat)progress {
-//    if ([JXUtilities isValidDictionary:fromColorDic] &&
-//        [JXUtilities isValidDictionary:toColorDic]) {
-//
-//        CGFloat selToNorR = ([toColorDic[@"r"] doubleValue] - [fromColorDic[@"r"] doubleValue]) * progress + [fromColorDic[@"r"] doubleValue];
-//        CGFloat selToNorG = ([toColorDic[@"g"] doubleValue] - [fromColorDic[@"g"] doubleValue]) * progress + [fromColorDic[@"g"] doubleValue];
-//        CGFloat selToNorB = ([toColorDic[@"b"] doubleValue] - [fromColorDic[@"b"] doubleValue]) * progress + [fromColorDic[@"b"] doubleValue];
-//        CGFloat selToNorA = ([toColorDic[@"a"] doubleValue] - [fromColorDic[@"a"] doubleValue]) * progress + [fromColorDic[@"a"] doubleValue];
-//
-//        UIColor *currentColor = RGBACOLOR(selToNorR, selToNorG, selToNorB, selToNorA);
-//
-//        return currentColor;
-//    }
-//
-//    return [UIColor redColor];
-//}
-
 #pragma mark - UIScrollView Delegate
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
     if (self.delegate && [self.delegate respondsToSelector:@selector(JXSegmentTitleViewWillBeginDragging:)]) {
@@ -313,31 +290,6 @@ typedef NS_OPTIONS(NSUInteger, ItemWidthType) {
     NSDictionary *attrs = @{NSFontAttributeName : font};
     return [string boundingRectWithSize:CGSizeMake(0, 0) options:NSStringDrawingUsesLineFragmentOrigin attributes:attrs context:nil].size.width;
 }
-
-///**
-// 获取颜色的RGBA值
-//
-// @param originColor 颜色
-// @return rgba字典
-// */
-//- (NSDictionary *)getRGBADictionaryByColor:(UIColor *)originColor {
-//    CGFloat r = 0, g = 0, b = 0, a = 0;
-//
-//    if ([self respondsToSelector:@selector(getRed:green:blue:alpha:)]) {
-//        [originColor getRed:&r green:&g blue:&b alpha:&a];
-//    } else {
-//        const CGFloat *components = CGColorGetComponents(originColor.CGColor);
-//        r = components[0];
-//        g = components[1];
-//        b = components[2];
-//        a = components[3];
-//    }
-//
-//    return @{@"R":@(r),
-//             @"G":@(g),
-//             @"B":@(b),
-//             @"A":@(a)};
-//}
 
 #pragma mark - Setting And Getting
 - (UIScrollView *)scrollView {
